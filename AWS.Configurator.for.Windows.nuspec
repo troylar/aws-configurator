@@ -21,8 +21,6 @@
         <file src="AwsConfiguratorApp\bin\Release\INIFileParser.dll" target="lib\net45\INIFileParser.dll" />
         <file src="AwsConfiguratorApp\bin\Release\INIFileParser.xml" target="lib\net45\INIFileParser.xml" />
         <file src="AwsConfiguratorApp\bin\Release\Interop.WindowsInstaller.dll" target="lib\net45\Interop.WindowsInstaller.dll" />
-        <file src="AwsConfiguratorApp\bin\Release\Microsoft.Deployment.WindowsInstaller.dll" target="lib\net45\Microsoft.Deployment.WindowsInstaller.dll" />
-        <file src="AwsConfiguratorApp\bin\Release\Microsoft.Deployment.WindowsInstaller.xml" target="lib\net45\Microsoft.Deployment.WindowsInstaller.xml" />
         <file src="AwsConfiguratorApp\bin\Release\Microsoft.Win32.Registry.dll" target="lib\net45\Microsoft.Win32.Registry.dll" />
         <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll" target="lib\net45\Mono.Cecil.dll" />
         <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll" target="lib\net45\Mono.Cecil.Mdb.dll" />
