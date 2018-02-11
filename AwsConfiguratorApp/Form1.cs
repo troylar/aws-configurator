@@ -52,17 +52,6 @@ namespace AwsConfiguratorApp
             await GetAllVoices();
         }
 
-        private void checkChildren(TreeNodeAdv node, bool isChecked)
-        {
-            return;
-            foreach (TreeNodeAdv childNode in node.Nodes)
-            {
-                checkChildren(childNode, isChecked);
-            }
-
-            node.Checked = isChecked;
-        }
-
         private void profileNameListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var credentialProfile =
@@ -203,13 +192,6 @@ namespace AwsConfiguratorApp
         private void CheckStateChanged(object sender, EventArgs e)
         {
             syncVoiceSelections(pollyTreeView.Root);
-            return;
-            var node = (TreeNodeAdv)sender;
-            checkChildren(node, node.Checked);
-            if (node.Parent != null)
-            {
-                refreshParentNode(node.Parent);
-            }
         }
 
         private void RefreshVersions()
