@@ -16,6 +16,7 @@ using AwsConfigurator.Installer;
 using Syncfusion.Windows.Forms.Tools;
 using CredentialProfile = AwsConfigurator.Model.CredentialProfile;
 using NAudio.Wave;
+using Squirrel;
 
 namespace AwsConfiguratorApp
 {
@@ -50,6 +51,10 @@ namespace AwsConfiguratorApp
             
             RefreshVersions();
             await GetAllVoices();
+            using (var mgr = new UpdateManager("C:\\temp\\Releases"))
+            {
+                await mgr.UpdateApp();
+            }
         }
 
         private void profileNameListBox_SelectedIndexChanged(object sender, EventArgs e)
