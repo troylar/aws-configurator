@@ -234,7 +234,7 @@ namespace AwsConfiguratorApp
                 uninstallButton.Enabled = false;
             }
 
-            lastCheckedLabel.Text = $@"Last checked: {DateTime.Now.ToString("mm/dd/yyyy hh:mm:ss")}";
+            lastCheckedLabel.Text = $@"Last checked: {DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss")}";
         }
 
         private void installButton_Click(object sender, EventArgs e)
