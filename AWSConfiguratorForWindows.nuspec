@@ -37,5 +37,21 @@
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.SpellChecker.Base.dll" target="lib\net45\Syncfusion.SpellChecker.Base.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Tools.Base.dll" target="lib\net45\Syncfusion.Tools.Base.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Tools.Windows.dll" target="lib\net45\Syncfusion.Tools.Windows.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Data.Common.dll" target="lib\net45\System.Data.Common.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Diagnostics.StackTrace.dll" target="lib\net45\System.Diagnostics.StackTrace.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Diagnostics.Tracing.dll" target="lib\net45\System.Diagnostics.Tracing.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Globalization.Extensions.dll" target="lib\net45\System.Globalization.Extensions.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.IO.Abstractions.dll" target="lib\net45\System.IO.Abstractions.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.IO.Compression.dll" target="lib\net45\System.IO.Compression.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Net.Http.dll" target="lib\net45\System.Net.Http.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Net.Sockets.dll" target="lib\net45\System.Net.Sockets.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Reflection.TypeExtensions.dll" target="lib\net45\System.Reflection.TypeExtensions.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Runtime.Serialization.Primitives.dll" target="lib\net45\System.Runtime.Serialization.Primitives.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Security.AccessControl.dll" target="lib\net45\System.Security.AccessControl.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Security.Cryptography.Algorithms.dll" target="lib\net45\System.Security.Cryptography.Algorithms.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Security.Principal.Windows.dll" target="lib\net45\System.Security.Principal.Windows.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Security.SecureString.dll" target="lib\net45\System.Security.SecureString.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Threading.Overlapped.dll" target="lib\net45\System.Threading.Overlapped.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\System.Xml.XPath.XDocument.dll" target="lib\net45\System.Xml.XPath.XDocument.dll" />
     </files>
 </package>

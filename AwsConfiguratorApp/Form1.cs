@@ -51,9 +51,9 @@ namespace AwsConfiguratorApp
             
             RefreshVersions();
             await GetAllVoices();
-            using (var mgr = new UpdateManager("C:\\temp\\Releases"))
+            using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/troylar/aws-configurator"))
             {
-                await mgr.UpdateApp();
+                await mgr.Result.UpdateApp();
             }
         }
 
