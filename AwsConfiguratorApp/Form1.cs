@@ -52,9 +52,9 @@ namespace AwsConfiguratorApp
             {
                 profileNameListBox.Items.Add(profile.ProfileName);
             }
-            
+
             RefreshVersions();
-            await GetAllVoices();
+            GetAllVoices();
             versionLabel.Text = $@"v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}";
         }
 
@@ -205,10 +205,17 @@ namespace AwsConfiguratorApp
             var softwareManager = new SoftwareManager();
             latestVersionLabel.Text = "Checking . . . ";
             installedVersionLabel.Text = "Checking . . . ";
+            string latestVersion;
 
-            var client = new GitHubClient(new ProductHeaderValue("aws-configurator"));
-            var tags = await client.Repository.GetAllTags("aws", "aws-cli");
-            var latestVersion = tags.OrderByDescending(t => new Version(t.Name)).First().Name;
+            var installFile = softwareManager.DownloadSoftware("https://s3.amazonaws.com/aws-cli/AWSCLI64.msi");
+            try
+            {
+                latestVersion = softwareManager.GetMsiProperty(installFile, "ProductVersion").Replace(":", ".");
+            }
+            finally
+            {
+                File.Delete(installFile);
+            }
 
             var installedVersion = softwareManager.GetInstalledSoftwareProperty("AWS Command Line Interface", "DisplayVersion");
             latestVersionLabel.Text = latestVersion;
@@ -253,7 +260,8 @@ namespace AwsConfiguratorApp
             {
                 File.Delete(installPath);
             }
-            RefreshVersions();
+
+            Task.Run(() => RefreshVersions());
         }
 
         public void UninstallSoftware(string displayName)
@@ -263,7 +271,7 @@ namespace AwsConfiguratorApp
             {
                 softwareManager.UninstallSoftware("AWS Command Line Interface");
             }
-            RefreshVersions();
+            Task.Run(()=>RefreshVersions());
         }
 
         private void uninstallButton_Click(object sender, EventArgs e)
