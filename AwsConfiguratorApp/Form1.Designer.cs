@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo2 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.profileNameListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.awsKeyTextBox = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@
             this.addAllVoicesButton = new System.Windows.Forms.Button();
             this.applyChangesButton = new System.Windows.Forms.Button();
             this.resetSelectionsButton = new System.Windows.Forms.Button();
+            this.versionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pollyTreeView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -366,11 +368,22 @@
             this.resetSelectionsButton.UseVisualStyleBackColor = true;
             this.resetSelectionsButton.Click += new System.EventHandler(this.resetSelectionsButton_Click);
             // 
+            // versionLabel
+            // 
+            this.versionLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.Location = new System.Drawing.Point(544, 705);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(153, 15);
+            this.versionLabel.TabIndex = 25;
+            this.versionLabel.Text = "N/A";
+            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 729);
+            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.resetSelectionsButton);
             this.Controls.Add(this.applyChangesButton);
             this.Controls.Add(this.addAllVoicesButton);
@@ -431,6 +444,7 @@
         private System.Windows.Forms.Button addAllVoicesButton;
         private System.Windows.Forms.Button applyChangesButton;
         private System.Windows.Forms.Button resetSelectionsButton;
+        private System.Windows.Forms.Label versionLabel;
     }
 }
 

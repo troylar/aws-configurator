@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Abstractions;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,7 +52,7 @@ namespace AwsConfiguratorApp
             
             RefreshVersions();
             await GetAllVoices();
-
+            versionLabel.Text = $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString()}";
         }
 
         private void profileNameListBox_SelectedIndexChanged(object sender, EventArgs e)
