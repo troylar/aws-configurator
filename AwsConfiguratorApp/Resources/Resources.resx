@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HideAllVoices" xml:space="preserve">
+    <value>Hide All Voices</value>
+  </data>
   <data name="Install" xml:space="preserve">
     <value>Install</value>
   </data>
   <data name="NoRegionSelected" xml:space="preserve">
     <value>No Region Selected</value>
+  </data>
+  <data name="ShowAllVoices" xml:space="preserve">
+    <value>Show All Voices</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="Uninstall" xml:space="preserve">
     <value>Uninstall</value>

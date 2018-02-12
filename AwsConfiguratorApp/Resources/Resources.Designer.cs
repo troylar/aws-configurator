@@ -61,6 +61,15 @@ namespace AwsConfiguratorApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide All Voices.
+        /// </summary>
+        public static string HideAllVoices {
+            get {
+                return ResourceManager.GetString("HideAllVoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Install.
         /// </summary>
         public static string Install {
@@ -75,6 +84,24 @@ namespace AwsConfiguratorApp.Resources {
         public static string NoRegionSelected {
             get {
                 return ResourceManager.GetString("NoRegionSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show All Voices.
+        /// </summary>
+        public static string ShowAllVoices {
+            get {
+                return ResourceManager.GetString("ShowAllVoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

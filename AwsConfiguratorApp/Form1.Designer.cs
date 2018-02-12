@@ -330,7 +330,7 @@
             this.removeAllButton.Name = "removeAllButton";
             this.removeAllButton.Size = new System.Drawing.Size(146, 29);
             this.removeAllButton.TabIndex = 21;
-            this.removeAllButton.Text = "Hide All Voices";
+            this.removeAllButton.Text = Resources.Resources.HideAllVoices;
             this.removeAllButton.UseVisualStyleBackColor = true;
             this.removeAllButton.Click += new System.EventHandler(this.removeAllButton_Click);
             // 
@@ -341,7 +341,7 @@
             this.addAllVoicesButton.Name = "addAllVoicesButton";
             this.addAllVoicesButton.Size = new System.Drawing.Size(146, 29);
             this.addAllVoicesButton.TabIndex = 22;
-            this.addAllVoicesButton.Text = "Add All Voices";
+            this.addAllVoicesButton.Text = Resources.Resources.ShowAllVoices;
             this.addAllVoicesButton.UseVisualStyleBackColor = true;
             this.addAllVoicesButton.Click += new System.EventHandler(this.addAllVoicesButton_Click);
             // 
