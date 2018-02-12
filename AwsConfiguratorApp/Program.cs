@@ -16,7 +16,7 @@ namespace AwsConfiguratorApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //UpdateApp();
+            Task.Run(UpdateApp);
             Application.Run(new mainForm());
         }
 
