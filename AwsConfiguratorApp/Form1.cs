@@ -54,7 +54,7 @@ namespace AwsConfiguratorApp
             }
 
             RefreshVersions();
-            GetAllVoices();
+            await GetAllVoices();
             versionLabel.Text = $@"v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}";
         }
 
@@ -200,7 +200,7 @@ namespace AwsConfiguratorApp
             syncVoiceSelections(pollyTreeView.Root);
         }
 
-        private async void RefreshVersions()
+        private void RefreshVersions()
         {
             var softwareManager = new SoftwareManager();
             latestVersionLabel.Text = "Checking . . . ";
