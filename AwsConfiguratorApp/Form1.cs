@@ -27,7 +27,7 @@ namespace AwsConfiguratorApp
         private Voice _selectedVoice;
         private TreeNodeAdv _selectedNode;
         private List<CredentialProfile> _profileList;
-        private const string ClsId = "698312A0-4B71-46AE-867F-FF45D9835EE9";
+        private string ClsId;
         private List<string> installedVoices = new List<string>();
         private List<Voice> allVoices;
         private List<string> voicesToBeAdded = new List<string>();
@@ -35,6 +35,7 @@ namespace AwsConfiguratorApp
 
         public mainForm()
         {
+            ClsId = System.Configuration.ConfigurationManager.AppSettings["PollyTTSEngineClsId"];
             InitializeComponent();
         }
 
