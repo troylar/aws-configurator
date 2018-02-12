@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Abstractions;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace AwsConfiguratorApp
             
             RefreshVersions();
             await GetAllVoices();
-            versionLabel.Text = $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString()}";
+            versionLabel.Text = $@"v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}";
         }
 
         private void profileNameListBox_SelectedIndexChanged(object sender, EventArgs e)
