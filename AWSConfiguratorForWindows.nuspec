@@ -27,6 +27,7 @@
         <file src="AwsConfiguratorApp\bin\Release\NodaTime.dll" target="lib\net45\NodaTime.dll" />
         <file src="AwsConfiguratorApp\bin\Release\NodaTime.pdb" target="lib\net45\NodaTime.pdb" />
         <file src="packages\squirrel.windows.1.7.9\lib\Net45\NuGet.Squirrel.dll" target="lib\net45\NuGet.Squirrel.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Octokit.dll" target="lib\net45\Octokit.dll" />
         <file src="packages\Splat.1.6.2\lib\Net45\Splat.dll" target="lib\net45\Splat.dll" />
         <file src="packages\squirrel.windows.1.7.9\lib\Net45\Squirrel.dll" target="lib\net45\Squirrel.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Grid.Base.dll" target="lib\net45\Syncfusion.Grid.Base.dll" />
