@@ -357,40 +357,6 @@ namespace AwsConfiguratorApp
             refreshApplyButton();
         }
 
-        private void refreshParentNode(TreeNodeAdv parentNode)
-        {
-            return;
-            var i = 0;
-            foreach (TreeNodeAdv node in parentNode.Nodes)
-            {
-                if (node.Checked)
-                {
-                    i++;
-                }
-            }
-
-            if (i == 0)
-            {
-                parentNode.Checked = false;
-            }
-            if (i == parentNode.Nodes.Count)
-            {
-                parentNode.Checked = true;
-                parentNode.CheckState = CheckState.Checked;
-            }
-
-            else if (i < parentNode.Nodes.Count)
-            {
-                parentNode.Checked = true;
-                parentNode.CheckState = CheckState.Checked;
-            }
-
-            if (parentNode.Parent != null)
-            {
-                refreshParentNode(parentNode.Parent);
-            }
-        }
-
         private void toggleVoiceButton_Click(object sender, EventArgs e)
         {
             var voiceManager = new VoiceManager(ClsId);
@@ -422,7 +388,6 @@ namespace AwsConfiguratorApp
                 _selectedNode.Checked = false;
             }
 
-            refreshParentNode(_selectedNode.Parent);
             refreshToggleVoiceButton();
             refreshApplyButton();
         }
