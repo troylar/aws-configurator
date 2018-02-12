@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Squirrel;
-
 namespace AwsConfiguratorApp
 {
     static class Program
@@ -23,7 +22,8 @@ namespace AwsConfiguratorApp
 
         static async Task UpdateApp()
         {
-            using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/troylar/aws-configurator"))
+            var githubRepo = System.Configuration.ConfigurationManager.AppSettings["GithubRepo"];
+            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo))
             {
                 await mgr.Result.UpdateApp();
             }
