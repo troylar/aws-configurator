@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Install" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="NoRegionSelected" xml:space="preserve">
+    <value>No Region Selected</value>
+  </data>
+  <data name="Uninstall" xml:space="preserve">
+    <value>Uninstall</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
 </root>

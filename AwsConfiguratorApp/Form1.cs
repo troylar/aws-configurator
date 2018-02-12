@@ -18,6 +18,7 @@ using AwsConfigurator.Installer;
 using Syncfusion.Windows.Forms.Tools;
 using CredentialProfile = AwsConfigurator.Model.CredentialProfile;
 using NAudio.Wave;
+using Octokit;
 using Squirrel;
 
 namespace AwsConfiguratorApp
@@ -67,7 +68,7 @@ namespace AwsConfiguratorApp
                 credentialProfile.Items[ConfigKey.AwsSecretAccessKey].Value : string.Empty;
 
             var region = credentialProfile.Items[ConfigKey.Region].Value;
-            regionComboBox.SelectedItem = "No Region Selected";
+            regionComboBox.SelectedItem = Resources.Resources.NoRegionSelected;
             if (credentialProfile.Items.Any(cp => cp.Key == ConfigKey.Region))
             {
                 foreach (var item in regionComboBox.Items)
@@ -199,47 +200,40 @@ namespace AwsConfiguratorApp
             syncVoiceSelections(pollyTreeView.Root);
         }
 
-        private void RefreshVersions()
+        private async void RefreshVersions()
         {
             var softwareManager = new SoftwareManager();
             latestVersionLabel.Text = "Checking . . . ";
             installedVersionLabel.Text = "Checking . . . ";
-            string siteVersion;
 
-            var installFile = softwareManager.DownloadSoftware("https://s3.amazonaws.com/aws-cli/AWSCLI64.msi");
-            try
-            {
-                siteVersion = softwareManager.GetMsiProperty(installFile, "ProductVersion").Replace(":", ".");
-            }
-            finally
-            {
-                File.Delete(installFile);
-            }
+            var client = new GitHubClient(new ProductHeaderValue("aws-configurator"));
+            var tags = await client.Repository.GetAllTags("aws", "aws-cli");
+            var latestVersion = tags.OrderByDescending(t => new Version(t.Name)).First().Name;
 
             var installedVersion = softwareManager.GetInstalledSoftwareProperty("AWS Command Line Interface", "DisplayVersion");
-            latestVersionLabel.Text = siteVersion; 
+            latestVersionLabel.Text = latestVersion;
             installedVersionLabel.Text = string.IsNullOrEmpty(installedVersion) ? "Not installed" : installedVersion;
             installButton.Enabled = false;
             if (string.IsNullOrEmpty(installedVersion))
             {
                 installButton.Enabled = true;
-                installButton.Text = "Install";
+                installButton.Text = Resources.Resources.Install;
                 uninstallButton.Enabled = false;
             }
-            else if (new Version(siteVersion) > new Version(installedVersion))
+            else if (new Version(latestVersion) > new Version(installedVersion))
             {
                 installButton.Enabled = true;
-                installButton.Text = "Upgrade";
+                installButton.Text = Resources.Resources.Upgrade;
                 uninstallButton.Enabled = false;
             }
-            else if (new Version(siteVersion) == new Version(installedVersion))
+            else if (new Version(latestVersion) == new Version(installedVersion))
             {
-                installButton.Text = "Upgrade";
+                installButton.Text = Resources.Resources.Upgrade;
                 installButton.Enabled = false;
                 uninstallButton.Enabled = false;
             }
 
-            lastCheckedLabel.Text = $@"Last checked: {DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss")}";
+            lastCheckedLabel.Text = $@"Last checked: {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
 
         private void installButton_Click(object sender, EventArgs e)
