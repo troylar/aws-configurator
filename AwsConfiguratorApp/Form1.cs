@@ -51,10 +51,7 @@ namespace AwsConfiguratorApp
             
             RefreshVersions();
             await GetAllVoices();
-            using (var mgr = UpdateManager.GitHubUpdateManager("https://github.com/troylar/aws-configurator"))
-            {
-                await mgr.Result.UpdateApp();
-            }
+
         }
 
         private void profileNameListBox_SelectedIndexChanged(object sender, EventArgs e)
