@@ -14,18 +14,36 @@ namespace AwsConfiguratorApp
         [STAThread]
         static void Main()
         {
+            UpdateApp();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Task.Run(UpdateApp);
             Application.Run(new mainForm());
         }
 
-        static async Task UpdateApp()
+        public static async Task UpdateApp()
         {
+            bool restartNeeded = false;
             var githubRepo = System.Configuration.ConfigurationManager.AppSettings["GithubRepo"];
-            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo))
+            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo).Result)
             {
-                await mgr.Result.UpdateApp();
+                var updates = await mgr.CheckForUpdate();
+                if (updates.ReleasesToApply.Any())
+                {
+                    var lastVersion = updates.ReleasesToApply.OrderBy(x => x.Version).Last();
+                    await mgr.DownloadReleases(new[] { lastVersion });
+                    await mgr.ApplyReleases(updates);
+                    await mgr.UpdateApp();
+                    restartNeeded = true;
+                    MessageBox.Show("The application has been updated - please close and restart.");
+                }
+                else
+                {
+                    MessageBox.Show("No Updates are available at this time.");
+                }
+            }
+            if (restartNeeded)
+            {
+                UpdateManager.RestartApp();
             }
         }
     }
