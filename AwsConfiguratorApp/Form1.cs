@@ -207,7 +207,7 @@ namespace AwsConfiguratorApp
             installedVersionLabel.Text = "Checking . . . ";
             string latestVersion;
 
-            var installFile = softwareManager.DownloadSoftware(ClsId = System.Configuration.ConfigurationManager.AppSettings["AWSCliX64"];);
+            var installFile = softwareManager.DownloadSoftware(System.Configuration.ConfigurationManager.AppSettings["AWSCliX64"]);
             try
             {
                 latestVersion = softwareManager.GetMsiProperty(installFile, "ProductVersion").Replace(":", ".");
@@ -251,7 +251,7 @@ namespace AwsConfiguratorApp
                 UninstallSoftware("AWS Command Line Interface");
             }
 
-            var installPath = softwareManager.DownloadSoftware("https://s3.amazonaws.com/aws-cli/AWSCLI64.msi");
+            var installPath = softwareManager.DownloadSoftware(System.Configuration.ConfigurationManager.AppSettings["AWSCliX64"]);
             try
             {
                 softwareManager.InstallSoftware(installPath);
