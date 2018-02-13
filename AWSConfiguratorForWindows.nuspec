@@ -17,6 +17,7 @@
         <file src="AwsConfiguratorApp\bin\Release\DeltaCompressionDotNet.MsDelta.dll" target="lib\net45\DeltaCompressionDotNet.MsDelta.dll" />
         <file src="AwsConfiguratorApp\bin\Release\DeltaCompressionDotNet.PatchApi.dll" target="lib\net45\DeltaCompressionDotNet.PatchApi.dll" />
         <file src="AwsConfiguratorApp\bin\Release\INIFileParser.dll" target="lib\net45\INIFileParser.dll" />
+        <file src="AwsConfiguratorApp\bin\Debug\Interop.WindowsInstaller.dll" target="lib\net45\Interop.WindowsInstaller.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Microsoft.Win32.Registry.dll" target="lib\net45\Microsoft.Win32.Registry.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.dll" target="lib\net45\Mono.Cecil.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.Mdb.dll" target="lib\net45\Mono.Cecil.Mdb.dll" />
