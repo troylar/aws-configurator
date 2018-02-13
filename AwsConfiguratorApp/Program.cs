@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,21 +25,25 @@ namespace AwsConfiguratorApp
         {
             bool restartNeeded = false;
             var githubRepo = System.Configuration.ConfigurationManager.AppSettings["GithubRepo"];
-            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo).Result)
+            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo))
             {
-                var updates = await mgr.CheckForUpdate();
-                if (updates.ReleasesToApply.Any())
+                try
                 {
-                    var lastVersion = updates.ReleasesToApply.OrderBy(x => x.Version).Last();
-                    await mgr.DownloadReleases(new[] { lastVersion });
-                    await mgr.ApplyReleases(updates);
-                    await mgr.UpdateApp();
-                    restartNeeded = true;
-                    MessageBox.Show(Resources.Resources.ApplicationHasUpdated);
+                    Debugger.Break();
+                    var updates = await mgr.Result.CheckForUpdate();
+                    if (updates.ReleasesToApply.Any())
+                    {
+                        var lastVersion = updates.ReleasesToApply.OrderBy(x => x.Version).Last();
+                        await mgr.Result.DownloadReleases(new[] { lastVersion });
+                        await mgr.Result.ApplyReleases(updates);
+                        await mgr.Result.UpdateApp();
+                        restartNeeded = true;
+                        MessageBox.Show(Resources.Resources.ApplicationHasUpdated);
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    MessageBox.Show("No Updates are available at this time.");
+                    MessageBox.Show(e.Message);
                 }
             }
             if (restartNeeded)

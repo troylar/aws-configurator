@@ -207,7 +207,7 @@ namespace AwsConfiguratorApp
             installedVersionLabel.Text = "Checking . . . ";
             string latestVersion;
 
-            var installFile = softwareManager.DownloadSoftware("https://s3.amazonaws.com/aws-cli/AWSCLI64.msi");
+            var installFile = softwareManager.DownloadSoftware(ClsId = System.Configuration.ConfigurationManager.AppSettings["AWSCliX64"];);
             try
             {
                 latestVersion = softwareManager.GetMsiProperty(installFile, "ProductVersion").Replace(":", ".");
