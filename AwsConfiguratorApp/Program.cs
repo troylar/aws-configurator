@@ -34,7 +34,7 @@ namespace AwsConfiguratorApp
                     await mgr.ApplyReleases(updates);
                     await mgr.UpdateApp();
                     restartNeeded = true;
-                    MessageBox.Show("The application has been updated - please close and restart.");
+                    MessageBox.Show(Resources.Resources.ApplicationHasUpdated);
                 }
                 else
                 {

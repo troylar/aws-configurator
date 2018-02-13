@@ -61,6 +61,15 @@ namespace AwsConfiguratorApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The application has been updated and will now restart..
+        /// </summary>
+        public static string ApplicationHasUpdated {
+            get {
+                return ResourceManager.GetString("ApplicationHasUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hide All Voices.
         /// </summary>
         public static string HideAllVoices {
@@ -93,15 +102,6 @@ namespace AwsConfiguratorApp.Resources {
         public static string ShowAllVoices {
             get {
                 return ResourceManager.GetString("ShowAllVoices", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         
