@@ -13,23 +13,25 @@
         <file src="AwsConfiguratorApp\bin\Release\AwsConfiguratorApp.exe.config" target="lib\net45\AwsConfiguratorApp.exe.config" />
         <file src="AwsConfiguratorApp\bin\Release\AWSSDK.Core.dll" target="lib\net45\AWSSDK.Core.dll" />
         <file src="AwsConfiguratorApp\bin\Release\AWSSDK.Polly.dll" target="lib\net45\AWSSDK.Polly.dll" />
-        <file src="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll" target="lib\net45\DeltaCompressionDotNet.dll" />
-        <file src="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll" target="lib\net45\DeltaCompressionDotNet.MsDelta.dll" />
-        <file src="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll" target="lib\net45\DeltaCompressionDotNet.PatchApi.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\DeltaCompressionDotNet.dll" target="lib\net45\DeltaCompressionDotNet.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\DeltaCompressionDotNet.MsDelta.dll" target="lib\net45\DeltaCompressionDotNet.MsDelta.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\DeltaCompressionDotNet.PatchApi.dll" target="lib\net45\DeltaCompressionDotNet.PatchApi.dll" />
         <file src="AwsConfiguratorApp\bin\Release\INIFileParser.dll" target="lib\net45\INIFileParser.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Interop.WindowsInstaller.dll" target="lib\net45\Interop.WindowsInstaller.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Microsoft.Deployment.WindowsInstaller.dll" target="lib\net45\Microsoft.Deployment.WindowsInstaller.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Microsoft.Win32.Registry.dll" target="lib\net45\Microsoft.Win32.Registry.dll" />
-        <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.dll" target="lib\net45\Mono.Cecil.dll" />
-        <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Mdb.dll" target="lib\net45\Mono.Cecil.Mdb.dll" />
-        <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Pdb.dll" target="lib\net45\Mono.Cecil.Pdb.dll" />
-        <file src="packages\Mono.Cecil.0.9.6.1\lib\net45\Mono.Cecil.Rocks.dll" target="lib\net45\Mono.Cecil.Rocks.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.dll" target="lib\net45\Mono.Cecil.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.Mdb.dll" target="lib\net45\Mono.Cecil.Mdb.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.Pdb.dll" target="lib\net45\Mono.Cecil.Pdb.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Mono.Cecil.Rocks.dll" target="lib\net45\Mono.Cecil.Rocks.dll" />
         <file src="AwsConfiguratorApp\bin\Release\NAudio.dll" target="lib\net45\NAudio.dll" />
         <file src="AwsConfiguratorApp\bin\Release\NodaTime.dll" target="lib\net45\NodaTime.dll" />
         <file src="AwsConfiguratorApp\bin\Release\NodaTime.pdb" target="lib\net45\NodaTime.pdb" />
-        <file src="packages\squirrel.windows.1.7.9\lib\Net45\NuGet.Squirrel.dll" target="lib\net45\NuGet.Squirrel.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\NuGet.Squirrel.dll" target="lib\net45\NuGet.Squirrel.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Octokit.dll" target="lib\net45\Octokit.dll" />
-        <file src="packages\Splat.1.6.2\lib\Net45\Splat.dll" target="lib\net45\Splat.dll" />
-        <file src="packages\squirrel.windows.1.7.9\lib\Net45\Squirrel.dll" target="lib\net45\Squirrel.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\SharpCompress.dll" target="lib\net45\SharpCompress.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Splat.dll" target="lib\net45\Splat.dll" />
+        <file src="AwsConfiguratorApp\bin\Release\Squirrel.dll" target="lib\net45\Squirrel.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Grid.Base.dll" target="lib\net45\Syncfusion.Grid.Base.dll" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Grid.Base.xml" target="lib\net45\Syncfusion.Grid.Base.xml" />
         <file src="AwsConfiguratorApp\bin\Release\Syncfusion.Grid.Windows.dll" target="lib\net45\Syncfusion.Grid.Windows.dll" />
