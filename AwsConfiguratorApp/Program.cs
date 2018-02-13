@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NuGet;
 using Squirrel;
 namespace AwsConfiguratorApp
 {
@@ -15,41 +16,36 @@ namespace AwsConfiguratorApp
         [STAThread]
         static void Main()
         {
-            UpdateApp();
+            Update();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainForm());
         }
 
-        public static async Task UpdateApp()
+        private static void Update()
         {
-            bool restartNeeded = false;
+            SemanticVersion newVersion = null;
+            var updated = false;
             var githubRepo = System.Configuration.ConfigurationManager.AppSettings["GithubRepo"];
-            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo))
+            using (var mgr = UpdateManager.GitHubUpdateManager(githubRepo).Result)
             {
-                try
+                var updateInfo = mgr.CheckForUpdate().Result;
+
+                var currentVersion = updateInfo.CurrentlyInstalledVersion.Version;
+
+                if (updateInfo.ReleasesToApply.Any())
                 {
-                    Debugger.Break();
-                    var updates = await mgr.Result.CheckForUpdate();
-                    if (updates.ReleasesToApply.Any())
-                    {
-                        var lastVersion = updates.ReleasesToApply.OrderBy(x => x.Version).Last();
-                        await mgr.Result.DownloadReleases(new[] { lastVersion });
-                        await mgr.Result.ApplyReleases(updates);
-                        await mgr.Result.UpdateApp();
-                        restartNeeded = true;
-                        MessageBox.Show(Resources.Resources.ApplicationHasUpdated);
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
+                    newVersion = updateInfo.FutureReleaseEntry.Version;
+                    mgr.DownloadReleases(updateInfo.ReleasesToApply).Wait();
+                    mgr.ApplyReleases(updateInfo).Wait();
+                    mgr.CreateUninstallerRegistryEntry().Wait();
+                    updated = true;
                 }
             }
-            if (restartNeeded)
-            {
-                UpdateManager.RestartApp();
-            }
+
+            if (!updated || newVersion == null) return;
+            MessageBox.Show("Restarting . . . ");
+            UpdateManager.RestartApp();
         }
     }
 }
